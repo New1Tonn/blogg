@@ -1,0 +1,98 @@
+{% load static %}
+<html >
+<head>
+	<title>Мой блог</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+
+	<link rel="shortcut icon" href="css/images/favicon.ico" />
+
+</head>
+<body>
+<div class="shell">
+	<div class="border">
+
+		<div id="navigation">
+			<ul>
+			    <li><a href="/" class="active">Главная</a></li>
+			    <li><a href="/admin">Админ панель</a></li>
+
+			</ul>
+		</div>
+
+		<div id="main">
+			<div id="content" class="left">
+
+				<div class="projects">
+					<h3>{{ post.title }}</h3>
+                    <p align="ctnter">
+                        <a href="#"><img src="{{ post.img.url }}" width="50%" /></a>
+                    </p>
+
+					<div class="item">
+						<div class="text left">
+							<p>{{ post.description }}</p>
+							<p>Автор:  {{ post.author }}</p>
+						</div>
+						<div class="cl">&nbsp;</div>
+					</div>
+
+				</div>
+<div class="like-dislike-buttons">
+    <br>
+    <p>Понравилось: {{ post.likes_set.all.count }}</p>
+    <br>
+    <a href="{% url 'add_likes' post.id %}" class="like">&#x1F44D;</a>
+    <a href="{% url 'del_likes' post.id %}" class="dislike">&#x1F44E;</a>
+</div>
+
+
+			</div>
+<div class="from-comment">
+    <h3>Оставить комментарий</h3>
+    <div class="comment-form">
+        <form action="{% url 'add_comments' post.id %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="text_comments">Ваш комментарий</label>
+                <textarea id="text_comments" name="text_comments" rows="4" cols="50" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="name">Ваше имя *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Ваш email *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Отправить</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="comments-list">
+        {% for comment in post.comments_set.all %}
+    <div class="view-comment">
+        <h4>{{ comment.name }}</h4>
+        <p>{{ comment.text_comments }}</p>
+        <a href="{% url 'delete_comment' comment.id %}">Удалить комментарий</a>
+    </div>
+{% endfor %}
+    </div>
+</div>
+
+
+
+			<div class="cl">&nbsp;</div>
+		</div>
+
+
+	</div>
+
+	<div id="footer">
+		<p class="copy right">Copyright &copy;  2022 </p>
+	</div>
+</div>
+</body>
+</html>

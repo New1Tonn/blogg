@@ -1,0 +1,183 @@
+* { margin: 0; padding: 0; outline:0; }
+
+body {
+    font-size: 12px;
+    line-height: 20px;
+    font-family: Georgia, Arial, Helvetica, Sans-Serif;
+    color: #333;
+    background: url() repeat 0 0;
+}
+
+a { color: #ff0000; text-decoration: none; cursor:pointer; }
+a:hover { text-decoration: underline; }
+
+a img { border: 0; }
+
+input, textarea, select { font-family: Arial, Helvetica, sans-serif; font-size:12px; }
+textarea { overflow:auto; }
+
+.cl { display: block; height: 0; font-size: 0; line-height: 0; text-indent: -4000px; clear: both; }
+.notext { font-size: 0; line-height: 0; text-indent: -4000px; }
+
+.left, .alignleft { float: left; display: inline; }
+.right, .alignright { float: right; display: inline; }
+
+
+.shell { width: 980px; margin: 0 auto; }
+.border { border: 1px solid #e8e8e8; background: #fff; position: relative; }
+
+
+#navigation { height: 43px; border-top: 1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb; }
+#navigation ul { list-style: none; }
+#navigation ul li { float: left; height: 43px; border-right: 1px solid #dbdbdb; font-size: 12px; line-height: 43px; font-weight: bold; text-transform: uppercase; }
+#navigation ul li a { float: left; height: 43px; color: #000; padding: 0 33px; }
+#navigation ul li a:hover, 
+#navigation ul li a.active { color: #ff0000; text-decoration: none; }
+
+
+#main { width: 932px; padding: 37px 24px 17px 24px; }
+#main h3 { font-size: 12px; line-height: 15px; color: #000; text-transform: uppercase; border-bottom: 1px solid #dbdbdb; padding: 0 0 9px 0; }
+#main a.more:hover { text-decoration: none; }
+
+#content { width: 905px; }
+
+.highlight {  }
+.highlight h3 { margin: 0 0 9px 0; }
+.highlight p { padding: 0 0 11px 0; }
+.highlight img { margin: 4px 12px 0 12px; }
+
+.projects { padding: 10px 0 0 0; }
+.projects h3 { margin: 0 0 17px 0; }
+.projects .item { margin: 0 0 28px 0; }
+.projects .image { width: 183px; height: 111px; border: 0px solid #dbdbdb; padding: 2px; margin: 0 20px 0 3px; }
+.projects .text { width: 600px; }
+.projects .text h4 { font-size: 12px; line-height: 15px; color: #333; text-transform: uppercase; padding: 3px 0 2px 0; }
+.projects .text p { padding: 0 0 3px 0; }
+
+.btn-buy:hover { text-decoration: none; }
+
+.advertisement { padding: 0 0 13px 0; }
+.advertisement h3 { margin: 0 0 18px 0; }
+.advertisement .ads { padding: 0 15px 0 7px; }
+.advertisement .ad { margin: 0 0 18px 0; }
+
+
+
+#footer { font-family: Arial, sans-serif; font-size: 11px; line-height: 14px; color: #7f7f7f; padding: 18px 27px 20px 38px; }
+#footer a{ color: #7f7f7f; }
+
+
+/* Стили для блока комментариев и кнопок "Нравится" и "Не нравится" */
+/* Стили для блока комментариев и кнопок "Нравится" и "Не нравится" */
+.from-comment {
+    margin-top: 20px;
+}
+
+.comment-form {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.comment-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+}
+
+textarea, input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+textarea {
+    resize: none; /* Запрещаем изменение размера textarea */
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50; /* Зеленый цвет */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049; /* Зеленый цвет в темных оттенках при наведении */
+}
+
+.comments-list {
+    width: 100%;
+    max-width: 600px;
+}
+
+.view-comment {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.view-comment h4 {
+    margin-bottom: 5px;
+}
+
+/* Стили для блока комментариев и кнопок "Нравится" и "Не нравится" */
+.like-dislike-buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.like-dislike-buttons p {
+    margin-bottom: 10px;
+}
+
+.like-dislike-buttons a {
+    margin-right: 10px;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.like-dislike-buttons a.like {
+    background-color: #2ecc71; /* Зелёный цвет для кнопки "Нравится" */
+}
+
+.like-dislike-buttons a.dislike {
+    background-color: #e74c3c; /* Красный цвет для кнопки "Не нравится" */
+}
+
+.like-dislike-buttons a.like:hover {
+    background-color: #27ae60; /* Зелёный цвет при наведении на кнопку "Нравится" */
+}
+
+.like-dislike-buttons a.like.active,
+.like-dislike-buttons a.dislike.active {
+    animation: heartBeat 0.8s ease-in-out; /* Анимация для активных кнопок "Нравится" и "Не нравится" */
+}
+
+/* Анимация сердца */
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
